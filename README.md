@@ -6,9 +6,9 @@
 ## Keybindings
 
 ### Installing
-* mac/README.md (hammerspoon + karabiner)
-* linux/README.md (kmonad)
-* windows/README.md (autohotkey)
+* [mac (hammerspoon + karabiner)](mac/)
+* [linux (kmonad)](linux/)
+* [windows (autohotkey)](windows/)
 
 ### General bindings
 Capslock = hyper key
