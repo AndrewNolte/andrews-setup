@@ -149,10 +149,11 @@ Capslock & . up::SendInput {Ctrl Up}{y Up}
 
 ; Capslock + numbers (autofill)
 
-Capslock & 1::SendInput {Text}william.wang.360@gmail.com
-Capslock & 2::SendInput {Text}wwang.00@outlook.com
-Capslock & 9::SendInput {Text}2500 University Avenue
-Capslock & 0::SendInput {Text}5208 Cuesta Verde
+; random stuff
+Capslock & 1::SendInput {Text}example@gmail.com
+Capslock & 2::SendInput {Text}example2@outlook.com
+Capslock & 9::SendInput {Text}sampleText3
+Capslock & 0::SendInput {Text}sampleText4
 
 ; Make Win Key + Capslock work like Capslock
 
