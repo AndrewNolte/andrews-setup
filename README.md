@@ -6,9 +6,9 @@
 ## Keybindings
 
 ### Installing
-* mac/README.md (hammerspoon + karabiner)
-* linux/README.md (kmonad)
-* windows/README.md (autohotkey)
+* [mac (hammerspoon + karabiner)](mac/)
+* [linux (kmonad)](linux/)
+* [windows (autohotkey)](windows/)
 
 ### General bindings
 Capslock = hyper key
@@ -27,7 +27,7 @@ These are most maintained on mac, and the other OSs have most of the functionali
 ## ZSH setup
 I use zsh, here's a [good explanation why](https://medium.com/@harrison.miller13_28580/bash-vs-z-shell-a-tale-of-two-command-line-shells-c65bb66e4658)
 
-### Oh-my-zsh
+### [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 Oh my zsh is like a package manageer for zsh. I use the default template .zshrc, with two extensions:
 * git: basic stuff like what branch you're in, autocomplete, etc
 * zsh-autosuggestions: super useful, will autocomplete to your last command with that prefix, and then you can tab over to accept
