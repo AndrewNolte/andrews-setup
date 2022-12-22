@@ -1,0 +1,1 @@
+cp -r mac/karabiner ~/.config
