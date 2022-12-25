@@ -85,7 +85,7 @@
   slp C-M-q
 
   ;; directional shortcuts
-  ltab C-S-tab  ;; left tab       
+  ltab C-S-tab  ;; left tab    
   rtab C-tab    ;; right tab
 
   wl A-left     ;; word left
@@ -102,22 +102,21 @@
 (deflayer delete-layer
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    bspc @dlu @dcr _    _    _    _
+  _    _    _    _    _    _    _    @dcl @dlu @dcr _    _    _    _
   XX   _    _    XX   _    _    _    @dwl @dld @dcr _    _    _
   _    _    _    _    _    _    _    @dll _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
 (defalias
+  ;; haven't figured out how to get fn macros working
+  dcl bspc                                ;; del char left
+  dcr C-d                                 ;; del char right
   dwl A-bspc                              ;; del word left
+  ;; dwr (around fn (around lalt bspc) )  ;; del word right
   dll M-S-bspc                            ;; del line left
+  ;; dlr (around fn (around meta bspc) )  ;; del line right
   dlu (tap-macro @lr @dll bspc)           ;; del line up
   dld (tap-macro @lr @dll bspc right)     ;; del line down
-  dcr C-d                                 ;; del char right
-
-  ;; haven't figured out how to get fn macros working
-  ;; dwr (around fn (around lalt bspc) )  ;; del word right
-  ;; dlr (around fn (around meta bspc) )  ;; del line right
-
 )
 
 
@@ -127,22 +126,18 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    @scl @slu @scr _    _    _    _
   XX   _    _    _    XX   _    _    @swl @sld @swr _    _    _
-  _    _    _    _    _    _    _    @sll @sl  @slr _    _    _
+  _    _    _    _    _    _    _    @sll _    @slr _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
 (defalias
+  scl S-left    ;; select char left
+  scr S-rght    ;; select char right
   swl A-S-left  ;; select word left
   swr A-S-rght  ;; select word right
   sll M-S-left  ;; select line left
   slr M-S-rght  ;; select line right
-  scl S-left    ;; select char left
-  scr S-rght    ;; select char right
-
-  slu (tap-macro @sll S-up)      ;; select line up
+  slu (tap-macro @sll S-up)    ;; select line up
   sld (tap-macro @slr @scr)    ;; select line down
-
-  sl (tap-macro @slr @scr)  
-
 )
   
 ;; caps-cmd: coding convenience, feel free to customize for your language
