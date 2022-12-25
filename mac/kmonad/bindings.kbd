@@ -1,6 +1,8 @@
-  
-  (defcfg
 
+;; Leverages default mac shortcuts to provide useful nav for almost any editor
+;; source for mac shortcuts https://support.apple.com/en-ae/HT201236
+
+(defcfg
   ;; For Linux (set your device input file here)RERER
   ;; input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
   ;; input  (device-file "/dev/input/event23")
@@ -8,16 +10,14 @@
   ;; output (uinput-sink "KMonad output"
   ;;   "/bin/sleep 1 && /bin/setxkbmap us -option compose:ralt")
 
+
   ;; For Windows
   ;; input  (low-level-hook)
   ;; output (send-event-sink)
 
+
   ;; For MacOS
   input  (iokit-name "Apple Internal Keyboard / Trackpad")
-  ;; input  (iokit-name "optional product string")
-  ;; input  (iokit-name "my-keyboard-product-string")
-
-
   output (kext)
 
   ;; Comment this is you want unhandled events not to be emitted
@@ -35,16 +35,25 @@
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft up
   fn   lctl lalt lmet           spc            rmet ralt left down rght
-)                          
+)                       
+
 
 (deflayer level1
-  _       brdn brup lp   mctl bldn blup prev pp   next mute vold volu
-  grv     1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab     q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @cpsl   a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft    z    x    c    v    b    n    m    ,    .    /    rsft up
-  @fn     lctl lalt lmet           spc            rmet ralt left down rght
+  _     brdn brup lp   mctl bldn blup prev pp   next mute vold volu
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+  @escl _    _    _    _    _    _    _    _    _    _    _    _
+  _     _    _    _    _    _    _    _    _    _    _    _    _
+  @fn   _    _    _              _              _    _    _    _    _
 )
+(defalias ;; base layer switches
+  cpsl (layer-toggle caps-layer)
+  ;; tapping caps = esc
+  ;; holding = hyper/caps layer
+  escl (tap-next esc @cpsl)
+  fn (around (layer-toggle function) fn)
+)
+
 
 ;; for normal fn
 (deflayer function
@@ -53,83 +62,95 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _              _              _    _    _    _    _
+  XX   _    _    _              _              _    _    _    _    _
 )
+
 
 ;; caps is the hyperkey, and all other layers derive from caps
 (deflayer caps-layer
   _    _    _    _     _     _    _    _    _    _     _    _    _
-  _    _    _    _     _     _    _    _    _    _     _    _    _   _
-  _    _    _    @ltab @rtab _    _    @pw  up   @nw   _    _    _   _
-  _    _    _    @dell @hill _    _    left down rght  _    _    _
-  _    _    _    _     _     _    _    @pl  _    @nl   _    _    _
-  _    _    _    _           @spcl          _    _     _    _    _
+  _    _    _    _     _     _    _    _    @up5 _     _    _    _    _
+  _    @slp _    @ltab @rtab _    _    left up   rght  _    _    _    _
+  XX   _    _    @dell @hill _    bspc @wl  down @wr   _    _    _
+  _    _    _    _     _     _    _    @ll  @dn5 @lr   _    _    _
+  _    _    _    @codl            @codl          _     _    _    _    _
+)
+(defalias
+  ;; secondary layers
+  codl (layer-toggle code-layer)
+  dell (layer-toggle delete-layer)
+  hill (layer-toggle select-layer)
+
+  ;; quick lock
+  slp C-M-q
+
+  ;; directional shortcuts
+  ltab C-S-tab  ;; left tab       
+  rtab C-tab    ;; right tab
+
+  wl A-left     ;; word left
+  wr A-right    ;; word right
+  ll M-left     ;; line left
+  lr M-right    ;; line right
+
+  up5 (tap-macro up up up up up)           ;; up 5
+  dn5 (tap-macro down down down down down) ;; down 5
 )
 
-;; delete modifier for directional shortcuts
+
+;; caps-d: delete modifier for directional shortcuts
 (deflayer delete-layer
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    @dpw @dlu _    _    _    _    _
-  _    _    _    _    _    _    _    bspc @dld @dnc _    _    _
-  _    _    _    _    _    _    _    @dpl _    _    _    _    _
-  _    _    _    _              _         _    _    _    _    _
-)   
-
-;; highlight modifier for directional shortcuts
-(deflayer highlight-layer
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    @hpw @hlu @hnw _    _    _    _
-  _    _    _    _    _    _    _    _    @hld _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _              _         _    _    _    _    _
-)   
-
-;; unused
-(deflayer space-layer
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    bspc @dlu @dcr _    _    _    _
+  XX   _    _    XX   _    _    _    @dwl @dld @dcr _    _    _
+  _    _    _    _    _    _    _    @dll _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
-) 
-
-
-;; source for mac shortcuts https://support.apple.com/en-ae/HT201236
-
-(defalias
-    ;; layers
-    cpsl (layer-toggle caps-layer)
-    fn (around (layer-toggle function) fn)
-    spcl (layer-toggle space-layer)
-    dell (layer-toggle delete-layer)
-    hill (layer-toggle highlight-layer)
-
-
-    ;; caps layer stuff
-    ltab C-S-tab  ;; prev tab       
-    rtab C-tab    ;; next tab
-    pw A-left     ;; prev word
-    nw A-right    ;; next word
-    pl M-left     ;; beginning of line
-    nl M-right    ;; end of line
-
-
-    ;; del layer stuff
-    dpw A-bspc    ;; del prev word
-    dpl M-S-bspc  ;; del prev line
-    dlu (tap-macro @nl @dpl bspc)       ;; del line, go up
-    dld (tap-macro @nl @dpl bspc right) ;; del line, go down
-    dnc C-d       ;; del next character
-    ;; fn macros dont work for some reason
-    ;; dnw (around KeyFn (around lalt bspc) ) ;; del next word
-    
-
-    ;; highlight layer stuff
-    hpw A-S-left
-    hnw A-S-rght
-    hlu S-up
-    hld S-down
 )
+(defalias
+  dwl A-bspc                              ;; del word left
+  dll M-S-bspc                            ;; del line left
+  dlu (tap-macro @lr @dll bspc)           ;; del line up
+  dld (tap-macro @lr @dll bspc right)     ;; del line down
+  dcr C-d                                 ;; del char right
+
+  ;; haven't figured out how to get fn macros working
+  ;; dwr (around fn (around lalt bspc) )  ;; del word right
+  ;; dlr (around fn (around meta bspc) )  ;; del line right
+
+)
+
+
+;; caps-f: select modifier for directional shortcuts
+(deflayer select-layer
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    @scl @slu @scr _    _    _    _
+  XX   _    _    _    XX   _    _    @swl @sld @swr _    _    _
+  _    _    _    _    _    _    _    @sll @sl  @slr _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
+(defalias
+  swl A-S-left  ;; select word left
+  swr A-S-rght  ;; select word right
+  sll M-S-left  ;; select line left
+  slr M-S-rght  ;; select line right
+  scl S-left    ;; select char left
+  scr S-rght    ;; select char right
+
+  slu (tap-macro @sll S-up)      ;; select line up
+  sld (tap-macro @slr @scr)    ;; select line down
+
+  sl (tap-macro @slr @scr)  
+
+)
+  
+;; caps-cmd: coding convenience, feel free to customize for your language
+(deflayer code-layer
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    #    \(   \)   _    _    _    _
+  XX   _    _    _    _    _    _    =    {    }    _    _    _
+  _    _    _    _    _    _    _    \_   [    ]    _    _    _
+  _    _    _    XX             XX             _    _    _    _    _
+) 
