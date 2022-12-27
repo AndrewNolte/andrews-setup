@@ -12,3 +12,7 @@ done
 
 jobs
 wait
+
+# to find pid to kill:
+# ps -ax | grep kmonad
+

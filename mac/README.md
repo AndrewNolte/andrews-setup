@@ -1,15 +1,13 @@
 
 # Mac
 
-## [Hammerspoon](https://www.hammerspoon.org/)
-
-This uses a lua script to do some complex functions, rather than just mapping keys to other keys
-
-* Makes caps lock the 'hyper' key (f17), which is used by karabiner
-* pressing just caps lock presses escape
-* caps + q -> sleep
-* cmd+ctrl+option with left, right, up will snap windows
+## [Kmonad](https://github.com/kmonad/kmonad)
+This is the most recent iteration of my keybindings. It's adapted from my linux keybindings, as I realized kmonad worked cross platform (no more Karabiner) It has everything in the other bindings, plus much more, and you're able to edit/understand them much more easily due to the nice declarative nature of the language. (Karabiner is super verbose json). The downside is setup is not as clean, but I attempted to make decent install/startup scripts for mac. For the explanation check out [mac/kmonad/kmonad.kbd](kmonad/kmonad.kbd)
 
 ## [Karabiner](https://karabiner-elements.pqrs.org/)
 
-This is declarative and operates at a lower level, so these are faster than hammerspoon bindings. This controls all the other bindings, like arrows keys and tab scrolling
+Older iteration of keybindings, not able to reach the level of the kmonad bindings due to the hyper-key implementation.
+
+## [Rectangle](https://rectangleapp.com/)
+
+This is used for window management, i.e. snapping windows to split screen

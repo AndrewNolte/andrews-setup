@@ -69,7 +69,7 @@
 ;; caps is the hyperkey, and all other layers derive from caps
 (deflayer caps-layer
   _    _    _    _     _     _    _    _    _    _     _    _    _
-  _    _    _    _     _     _    _    _    @up5 _     _    _    _    _
+  _    _    _    _     _     _    _    _    @up5 @up5     _    _    _    _
   _    @slp _    @ltab @rtab _    _    left up   rght  _    _    _    _
   XX   _    _    @dell @hill _    bspc @wl  down @wr   _    _    _
   _    _    _    _     _     _    _    @ll  @dn5 @lr   _    _    _
@@ -140,7 +140,7 @@
   sld (tap-macro @slr @scr)    ;; select line down
 )
   
-;; caps-cmd: coding convenience, feel free to customize for your language
+;; caps-cmd/space: coding convenience, feel free to customize for your language
 (deflayer code-layer
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
