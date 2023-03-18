@@ -68,19 +68,19 @@
 
 ;; caps is the hyperkey, and all other layers derive from caps
 (deflayer caps-layer
-  _    _    _    _     _     _    _    _    _    _     _    _    _
-  _    _    _    _     _     _    _    _    @up5 @up5     _    _    _    _
-  _    @slp _    @ltab @rtab _    _    left up   rght  _    _    _    _
-  XX   _    _    @dell @hill _    bspc @wl  down @wr   _    _    _
-  _    _    _    _     _     _    _    @ll  @dn5 @lr   _    _    _
-  _    _    _    @codl            @codl          _     _    _    _    _
+  _    _    _     _     _     _    _    _    _    _     _    _    _
+  _    _    _     _     _     _    _    _    @up5 @up5     _    _    _    _
+  _    @slp _     @ltab @rtab _    _    left up   rght  _    _    _    _
+  XX   _    @movl @dell @hill _    bspc @wl  down @wr   _    _    _
+  _    _    _     _     _     _    _    @ll  @dn5 @lr   _    _    _
+  _    _    _     @ttyl            @ttyl          _     _    _    _    _
 )
 (defalias
   ;; secondary layers
-  codl (layer-toggle code-layer)
+  ttyl (layer-toggle terminal-layer)
   dell (layer-toggle delete-layer)
   hill (layer-toggle select-layer)
-
+  movl (layer-toggle move-layer)
   ;; quick lock
   slp C-M-q
 
@@ -139,13 +139,48 @@
   slu (tap-macro @sll S-up)    ;; select line up
   sld (tap-macro @slr @scr)    ;; select line down
 )
-  
-;; caps-cmd/space: coding convenience, feel free to customize for your language
-(deflayer code-layer
+
+
+;; caps-s: move modifier for directional shortcuts
+(deflayer move-layer
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    #    \(   \)   _    _    _    _
-  XX   _    _    _    _    _    _    =    {    }    _    _    _
-  _    _    _    _    _    _    _    \_   [    ]    _    _    _
+  _    _    _    _    _    _    _    _    @mlu _    _    _    _    _
+  _    _    _    _    _    _    _    _    @mld _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
+(defalias
+  mlu A-up          ;; move line up
+  mld A-down        ;; move line down
+)
+  
+;; terminal layer: for manipulating terminal
+(deflayer terminal-layer
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    @nt  @ttu _    _    _    _    _
+  XX   _    _    _    _    _    _    @dt  @ttd @tt  _    _    _
+  _    _    _    _    _    _    _    @ttl _    @ttr _    _    _
   _    _    _    XX             XX             _    _    _    _    _
 ) 
+(defalias
+  nt C-S-`    ;; new terminal
+  dt M-A-S-d  ;; delete terminal
+  tt C-`      ;; toggle terminal
+  ttu  M-S-[  ;; terminal up
+  ttd  M-S-]  ;; terminal down
+  ;; resize- I have my terminal positioned on the right
+  ttl  M-C-left   ;; resize left
+  ttr  M-C-right  ;; resize right
+)
+
+
+;; (deflayer new-layer
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _    _              _              _    _    _    _    _
+;; )
