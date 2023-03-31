@@ -113,7 +113,7 @@
   dcr C-d                                 ;; del char right
   dwl A-bspc                              ;; del word left
   ;; dwr (around fn (around lalt bspc) )  ;; del word right
-  dll M-S-bspc                            ;; del line left
+  dll M-bspc                              ;; del line left
   ;; dlr (around fn (around meta bspc) )  ;; del line right
   dlu (tap-macro @lr @dll bspc)           ;; del line up
   dld (tap-macro @lr @dll bspc right)     ;; del line down
