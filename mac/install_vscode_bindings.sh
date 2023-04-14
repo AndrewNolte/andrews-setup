@@ -1,0 +1,1 @@
+cp mac/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json

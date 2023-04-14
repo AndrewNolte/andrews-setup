@@ -171,8 +171,8 @@
   ttu  M-S-[  ;; terminal up
   ttd  M-S-]  ;; terminal down
   ;; resize- I have my terminal positioned on the right
-  ttl  M-C-left   ;; resize left
-  ttr  M-C-right  ;; resize right
+  ttl  M-C-A-S-left   ;; resize terminal left
+  ttr  M-C-A-S-right  ;; resize terminal right
 )
 
 

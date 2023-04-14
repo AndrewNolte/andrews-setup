@@ -1,65 +1,45 @@
 [
     {
-        "key": "alt+backspace",
-        "command": "-deleteWordLeft",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+cmd+g b",
-        "command": "-gitlens.toggleFileBlame",
-        "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
-    },
-    {
-        "key": "cmd+backspace",
-        "command": "deleteInsideWord"
-    },
-    {
         "key": "cmd+backspace",
         "command": "-deleteAllLeft",
-        "when": "textInputFocus && !editorReadonly"
+        "when": "!editorReadonly"
     },
     {
-        "key": "cmd+backspace",
-        "command": "deleteWordLeft",
-        "when": "textInputFocus && !editorReadonly"
+        "key": "alt+cmd+z",
+        "command": "gitlens.toggleFileBlame"
     },
     {
-        "key": "cmd+d",
-        "command": "gitlens.copyRemoteFileUrlToClipboard"
+        "key": "ctrl+g",
+        "command": "-workbench.action.gotoLine"
     },
     {
-        "key": "cmd+j",
-        "command": "workbench.action.focusActiveEditorGroup"
-    },
-    {
-        "key": "cmd+k",
-        "command": "-workbench.action.terminal.clear",
-        "when": "terminalFocus && terminalProcessSupported"
-    },
-    {
-        "key": "cmd+k",
-        "command": "workbench.action.terminal.focus"
-    },
-    {
-        "key": "cmd+l",
-        "command": "workbench.action.gotoLine"
-    },
-    {
-        "key": "ctrl+cmd+[",
-        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
-    },
-    {
-        "key": "ctrl+cmd+]",
-        "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
+        "key": "ctrl+cmd+right",
+        "command": "-workbench.action.moveEditorToNextGroup"
     },
     {
         "key": "ctrl+cmd+left",
         "command": "-workbench.action.moveEditorToPreviousGroup"
     },
     {
-        "key": "ctrl+cmd+left",
-        "command": "workbench.action.terminal.resizePaneLeft",
-        "when": "terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+        "key": "shift+cmd+]",
+        "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "shift+cmd+[",
+        "command": "-workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+    },
+    {
+        "key": "cmd+k",
+        "command": "-workbench.action.terminal.clear",
+        "when": "terminalFocus && terminalProcessSupported"
     },
     {
         "key": "ctrl+cmd+left",
@@ -68,66 +48,68 @@
     },
     {
         "key": "ctrl+cmd+right",
-        "command": "-workbench.action.moveEditorToNextGroup"
-    },
-    {
-        "key": "ctrl+cmd+right",
-        "command": "workbench.action.terminal.resizePaneRight",
-        "when": "terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-    },
-    {
-        "key": "ctrl+cmd+right",
         "command": "-workbench.action.terminal.resizePaneRight",
         "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     },
     {
-        "key": "ctrl+g",
-        "command": "-workbench.action.gotoLine"
+        "key": "cmd+d",
+        "command": "gitlens.copyRemoteFileUrlToClipboard"
     },
-    {
-        "key": "ctrl+shift+tab",
-        "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
-    },
-    {
-        "key": "ctrl+shift+tab",
-        "command": "workbench.action.previousEditor"
-    },
-    {
-        "key": "ctrl+tab",
-        "command": "workbench.action.nextEditor"
-    },
-    {
-        "key": "ctrl+tab",
-        "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
-    },
-    {
-        "key": "shift+alt+cmd+d",
-        "command": "workbench.action.terminal.kill"
-    },
-    {
-        "key": "shift+cmd+[",
-        "command": "-workbench.action.previousEditor"
-    },
-    {
-        "key": "shift+cmd+]",
-        "command": "-workbench.action.nextEditor"
-    },
+
     {
         "key": "shift+cmd+b",
         "command": "gitlens.toggleFileBlame",
         "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
     },
     {
-        "key": "shift+cmd+backspace",
-        "command": "deleteAllLeft",
-        "when": "textInputFocus && !editorReadonly"
+        "key": "cmd+j",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "cmd+l",
+        "command": "workbench.action.gotoLine"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+cmd+]",
+        "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
+    },
+    {
+        "key": "ctrl+cmd+[",
+        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+    },
+    {
+        "key": "cmd+k",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "shift+alt+cmd+d",
+        "command": "workbench.action.terminal.kill"
+    },
+    {
+        "key": "ctrl+cmd+alt+shift+left",
+        "command": "workbench.action.terminal.resizePaneLeft",
+        "when": "terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+cmd+alt+shift+right",
+        "command": "workbench.action.terminal.resizePaneRight",
+        "when": "terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "shift+cmd+space",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active"
     },
     {
         "key": "shift+cmd+r",
-        "command": "gitlens.graph.columnChangesOn"
-    },
-    {
-        "key": "shift+cmd+r",
-        "command": "gitlens.diffLineWithWorking"
+        "command": "git.openChange"
     }
 ]
