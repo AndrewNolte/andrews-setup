@@ -80,7 +80,7 @@
   ttyl (layer-toggle terminal-layer)
   dell (layer-toggle delete-layer)
   hill (layer-toggle select-layer)
-  movl (layer-toggle move-layer)
+  movl (layer-toggle shift-layer)
   ;; quick lock
   slp C-M-q
 
@@ -141,18 +141,19 @@
 )
 
 
-;; caps-s: move modifier for directional shortcuts
-(deflayer move-layer
+;; caps-s: shift modifier for directional shortcuts
+(deflayer shift-layer
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    @mlu _    _    _    _    _
-  _    _    _    _    _    _    _    _    @mld _    _    _    _
+  _    _    _    _    _    _    _    @mwl @mld tab  _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
 (defalias
   mlu A-up          ;; move line up
   mld A-down        ;; move line down
+  mwl S-tab         ;; move word left
 )
   
 ;; terminal layer: for manipulating terminal
