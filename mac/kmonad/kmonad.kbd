@@ -123,10 +123,10 @@
 ;; caps-f: select modifier for directional shortcuts
 (deflayer select-layer
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    @su5 @su5 _    _    _    _
   _    _    _    _    _    _    _    @scl @slu @scr _    _    _    _
   XX   _    _    _    XX   _    _    @swl @sld @swr _    _    _
-  _    _    _    _    _    _    _    @sll _    @slr _    _    _
+  _    _    _    _    _    _    _    @sll @sd5 @slr _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
 (defalias
@@ -137,23 +137,27 @@
   sll M-S-left  ;; select line left
   slr M-S-rght  ;; select line right
   slu (tap-macro @sll S-up)    ;; select line up
-  sld (tap-macro @slr @scr)    ;; select line down
+  sld (tap-macro @slr S-down)    ;; select line down
+  su5 (tap-macro @sll S-up S-up S-up S-up S-up)
+  sd5 (tap-macro @slr S-down S-down S-down S-down S-down)
 )
 
 
 ;; caps-s: shift modifier for directional shortcuts
 (deflayer shift-layer
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    @mu5 @mu5 _    _    _    _
   _    _    _    _    _    _    _    _    @mlu _    _    _    _    _
   _    _    _    _    _    _    _    @mwl @mld tab  _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    @md5    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
 (defalias
   mlu A-up          ;; move line up
   mld A-down        ;; move line down
   mwl S-tab         ;; move word left
+  mu5 (tap-macro @mlu @mlu @mlu @mlu @mlu)
+  md5 (tap-macro @mld @mld @mld @mld @mld)
 )
   
 ;; terminal layer: for manipulating terminal
