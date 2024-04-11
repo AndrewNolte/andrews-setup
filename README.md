@@ -6,7 +6,7 @@
 ## Keybindings
 
 ### Installing
-* [mac (hammerspoon + karabiner)](mac/)
+* [mac (kmonad)](mac/)
 * [linux (kmonad)](linux/)
 * [windows (autohotkey)](windows/)
 
@@ -15,13 +15,12 @@ Capslock = hyper key
 
 hyper + e, hyper + r is switch tab left or right, super useful for web browsing.
 
-hyper + i,j,k,l is arrow keys
+hyper + i,j,k,l is arrow keys, other keys around there make jumps of varying degree
 
 hyper + q is sleep
 
 
 These are most maintained on mac, and the other OSs have most of the functionality with some caveats.
-
 
 
 ## ZSH setup

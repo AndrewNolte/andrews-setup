@@ -1,134 +1,138 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
   {
-    "key": "ctrl+tab",
-    "command": "workbench.action.nextEditor"
+      "key": "cmd+e",
+      "command": "editor.action.showHover",
+      "when": "editorTextFocus"
   },
   {
-    "key": "shift+cmd+]",
-    "command": "-workbench.action.nextEditor"
+      "key": "cmd+backspace",
+      "command": "-deleteAllLeft",
+      "when": "!editorReadonly"
   },
   {
-    "key": "ctrl+cmd+[",
-    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+      "key": "alt+cmd+z",
+      "command": "gitlens.toggleFileBlame"
   },
   {
-    "key": "ctrl+tab",
-    "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+      "key": "ctrl+g",
+      "command": "-workbench.action.gotoLine"
   },
   {
-    "key": "ctrl+cmd+]",
-    "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
+      "key": "ctrl+cmd+right",
+      "command": "-workbench.action.moveEditorToNextGroup"
   },
   {
-    "key": "ctrl+shift+tab",
-    "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
+      "key": "ctrl+cmd+left",
+      "command": "-workbench.action.moveEditorToPreviousGroup"
   },
   {
-    "key": "ctrl+shift+tab",
-    "command": "workbench.action.previousEditor"
+      "key": "shift+cmd+]",
+      "command": "-workbench.action.nextEditor"
   },
   {
-    "key": "shift+cmd+[",
-    "command": "-workbench.action.previousEditor"
+      "key": "shift+cmd+[",
+      "command": "-workbench.action.previousEditor"
   },
   {
-    "key": "cmd+k",
-    "command": "-workbench.action.terminal.clear",
-    "when": "terminalFocus && terminalProcessSupported"
+      "key": "ctrl+shift+tab",
+      "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
   },
   {
-    "key": "cmd+j",
-    "command": "workbench.action.focusActiveEditorGroup"
+      "key": "ctrl+tab",
+      "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
   },
   {
-    "key": "cmd+k",
-    "command": "workbench.action.terminal.focus"
+      "key": "cmd+k",
+      "command": "-workbench.action.terminal.clear",
+      "when": "terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "shift+cmd+b",
-    "command": "gitlens.toggleFileBlame",
-    "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
+      "key": "ctrl+cmd+left",
+      "command": "-workbench.action.terminal.resizePaneLeft",
+      "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "alt+cmd+g b",
-    "command": "-gitlens.toggleFileBlame",
-    "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
+      "key": "ctrl+cmd+right",
+      "command": "-workbench.action.terminal.resizePaneRight",
+      "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "cmd+d",
-    "command": "gitlens.copyRemoteFileUrlToClipboard"
+      "key": "cmd+d",
+      "command": "gitlens.copyRemoteFileUrlToClipboard"
   },
   {
-    "key": "cmd+l",
-    "command": "workbench.action.gotoLine"
+      "key": "shift+cmd+b",
+      "command": "gitlens.toggleFileBlame",
+      "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
   },
   {
-    "key": "ctrl+g",
-    "command": "-workbench.action.gotoLine"
+      "key": "cmd+j",
+      "command": "workbench.action.focusActiveEditorGroup"
   },
   {
-    "key": "cmd+backspace",
-    "command": "deleteInsideWord"
+      "key": "cmd+l",
+      "command": "workbench.action.gotoLine"
   },
   {
-    "key": "shift+cmd+backspace",
-    "command": "deleteAllLeft",
-    "when": "textInputFocus && !editorReadonly"
+      "key": "ctrl+tab",
+      "command": "workbench.action.nextEditor"
   },
   {
-    "key": "cmd+backspace",
-    "command": "-deleteAllLeft",
-    "when": "textInputFocus && !editorReadonly"
+      "key": "ctrl+shift+tab",
+      "command": "workbench.action.previousEditor"
   },
   {
-    "key": "cmd+backspace",
-    "command": "deleteWordLeft",
-    "when": "textInputFocus && !editorReadonly"
+      "key": "ctrl+cmd+]",
+      "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
   },
   {
-    "key": "alt+backspace",
-    "command": "-deleteWordLeft",
-    "when": "textInputFocus && !editorReadonly"
+      "key": "ctrl+cmd+[",
+      "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
   },
   {
-    "key": "shift+alt+cmd+d",
-    "command": "workbench.action.terminal.kill"
+      "key": "cmd+k",
+      "command": "workbench.action.terminal.focus"
   },
   {
-    "key": "shift+cmd+r",
-    "command": "gitlens.graph.columnChangesOn"
+      "key": "shift+alt+cmd+d",
+      "command": "workbench.action.terminal.kill"
   },
   {
-    "key": "shift+cmd+r",
-    "command": "gitlens.diffLineWithWorking"
+      "key": "ctrl+cmd+alt+shift+left",
+      "command": "workbench.action.terminal.resizePaneLeft",
+      "when": "terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "ctrl+cmd+left",
-    "command": "-workbench.action.moveEditorToPreviousGroup"
+      "key": "ctrl+cmd+alt+shift+right",
+      "command": "workbench.action.terminal.resizePaneRight",
+      "when": "terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "ctrl+cmd+left",
-    "command": "workbench.action.terminal.resizePaneLeft",
-    "when": "terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+      "key": "shift+cmd+space",
+      "command": "workbench.view.scm",
+      "when": "workbench.scm.active"
   },
   {
-    "key": "ctrl+cmd+left",
-    "command": "-workbench.action.terminal.resizePaneLeft",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+      "key": "shift+cmd+r",
+      "command": "git.openChange"
   },
   {
-    "key": "ctrl+cmd+right",
-    "command": "-workbench.action.moveEditorToNextGroup"
+      "key": "cmd+r",
+      "command": "editor.action.revealDefinition",
+      "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
-    "key": "ctrl+cmd+right",
-    "command": "workbench.action.terminal.resizePaneRight",
-    "when": "terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+      "key": "f12",
+      "command": "-editor.action.revealDefinition",
+      "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
-    "key": "ctrl+cmd+right",
-    "command": "-workbench.action.terminal.resizePaneRight",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+      "key": "cmd+shift+c",
+      "command": "copyRelativeFilePath",
+  },
+  {
+      "key": "shift+alt+cmd+c",
+      "command": "-copyRelativeFilePath",
+      "when": "!editorFocus"
   }
 ]
