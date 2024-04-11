@@ -1,5 +1,10 @@
 [
     {
+        "key": "cmd+e",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
         "key": "cmd+backspace",
         "command": "-deleteAllLeft",
         "when": "!editorReadonly"
@@ -55,7 +60,6 @@
         "key": "cmd+d",
         "command": "gitlens.copyRemoteFileUrlToClipboard"
     },
-
     {
         "key": "shift+cmd+b",
         "command": "gitlens.toggleFileBlame",
@@ -111,5 +115,24 @@
     {
         "key": "shift+cmd+r",
         "command": "git.openChange"
+    },
+    {
+        "key": "cmd+r",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "cmd+shift+c",
+        "command": "copyRelativeFilePath",
+    },
+    {
+        "key": "shift+alt+cmd+c",
+        "command": "-copyRelativeFilePath",
+        "when": "!editorFocus"
     }
 ]
