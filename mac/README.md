@@ -21,25 +21,44 @@ If you need to run on an external keyboard, you may need to add ```--input "ioki
 
 The keybindings are pretty self-documenting in [the config](kmonad/kmonad.kbd)
 
+These are great because they work across nearly all text editors- vscode, email, docs, navigating sheets, etc. You get 80% of the features of vim/emac, while having them work everywhere.
+
 ### Basic Navigation
 
 Caps lock is used as your hyper key for nearly all commands
 
-- Caps + e, Caps + r will switch to a left or right tab. These just map to cmd+tab, cmd+shift+tab, so they should work across many apps. Mapping to native bindings will be a theme here.
 
-- Caps + i,j,k,l are like arrow keys, except J and L actually go left/right one word
-- Caps + i,p go one left/right
-- Caps + m, '.' go to the beginning and end of a line
-- Caps + ',' and Caps + 8 or 9 go up/down by five
+| Caps + ... |   |
+|----------|----------|
+| e/r | left/right one tab  |
+| i/k | up/down arrow
+| j/l | left/right one word |
+| i/p | left/right one char |
+| m/. | start/end of line |
+| ,/(8\|9) | up/down 5x
+
+I find these all intuitive and close to the home row, unlike the vim pneumonics that are pretty far from home.
+
+
 
 ### Layers
 The Select layer (Caps + f) modifies the nav keys by selecting text between present and the moved cursor
 
-The Shift layer (Caps + s) modifies the nav keys by shifting the selection around (up/down, tab left and right)
+The Shift layer (Caps + s) modifies the nav keys by shifting the selection around (up/down, tab left and right). This layer adds the option key, which most editors take to mean this layer.
 
 The Delete layer (Caps + d) will delete in the direction of movement
 
-The terminal layer (Caps + cmd) has a bunch of useful terminal shortcuts for vscode
+The terminal layer (Caps + cmd) has a bunch of useful terminal shortcuts for vscode. I also use the terminal on the right, so directionally these mainly make sense for that setup.
+
+
+| Caps + Cmd + ... |   |
+|----------|----------|
+| L | Toggle hide/show terminal panel |
+| U | New terminal |
+| J | Delete Terminal |
+| I/K | Select Up/Down one terminal |
+| M/. | Expand/Contract terminal size | 
+
 
 
 ## [Rectangle](https://rectangleapp.com/)
