@@ -1,9 +1,12 @@
 ## Keybindings
 
-These bindings use [Kmonad](https://github.com/kmonad/kmonad) as a fronetend. Kmonad is super nice to program, but hard to install, so I tried making an install script for mac at least. I haven't tried it on other platforms, but in theory it should work on windows and linux. The keys that they map to should need to would probably need to change though.
+These bindings use [Kmonad](https://github.com/kmonad/kmonad) as a fronetend. I haven't tried it on other platforms, but in theory it should work on windows and linux. The keys that they map to should need to would probably need to change though.
 
 
 ## Installing
+
+Kmonad is super nice to program, but hard to install, so I tried making an install script for mac at least.
+
 Run 
 ```
 bindings/install_mac.sh
@@ -11,13 +14,13 @@ bindings/install_mac.sh
 
 This installs [Karabiner Elements](https://github.com/pqrs-org/Karabiner-Elements), kmonad, and the recommended Karabiner driver. In my experience, Karabiner elements is needed, as well as some work in giving permissions to the apps. In Settings > Privacy & Security > Input Monitoring, you should see karabiner_grabber, karabiner_observer and terminal
 
-When it's installed, you should be able to run ```sudo kmonad mac/kmonad/kmonad.kbd``` to activate them. The startup script thing has been broken for a while.
+When it's installed, you should be able to run ```sudo kmonad bindings/kmonad.kbd``` to activate them. The startup script thing has been broken for a while.
 
 If you need to run on an external keyboard, you may need to add ```--input "iokit-name Keyboard K380"``` (or your keyboard name) to that command. Run list-keyboards to get the name of it. However, lately it's just been working for all keyboards for me.
 
 ## Using
 
-The keybindings are pretty self-documenting in [the config](kmonad/kmonad.kbd), but here is a more concise explanation.
+The keybindings are pretty self-documenting in [the config](bindings/kmonad.kbd), but here is a more concise explanation.
 
 ### Basic Navigation
 
