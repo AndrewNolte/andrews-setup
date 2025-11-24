@@ -148,14 +148,17 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    @mu5 @mu5 _    _    _    _
   _    _    _    _    _    _    _    _    @mlu _    _    _    _    _
-  _    _    _    _    _    _    _    @mwl @mld tab  _    _    _
-  _    _    _    _    _    _    _    _    @md5    _    _    _    _
+  _    _    _    _    _    _    _    @mwl @mld @mwr _    _    _
+  _    _    _    _    _    _    _    @gb  @md5 @gf  _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
 (defalias
   mlu A-up          ;; move line up
   mld A-down        ;; move line down
-  mwl S-tab         ;; move word left
+  mwl M-[           ;; move word left (back on chrome and slack)
+  mwr M-]           ;; move word right (forward on chrome and slack)
+  gb C--            ;; go back (vscode)
+  gf C-S--          ;; go forward (vscode)
   mu5 (tap-macro @mlu @mlu @mlu @mlu @mlu)
   md5 (tap-macro @mld @mld @mld @mld @mld)
 )
